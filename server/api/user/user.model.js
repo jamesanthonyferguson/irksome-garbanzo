@@ -17,15 +17,15 @@ var User = Bookshelf.Model.extend({
     //   this.on('creating', this.hashPassword);
     // },
 
-    authenticate: function(attemptedPassword){
-      return bcrypt.compareSync(attemptedPassword, this.get('hashedPassword'));
-    },
+    // authenticate: function(attemptedPassword){
+    //   return bcrypt.compareSync(attemptedPassword, this.get('hashedPassword'));
+    // },
 
-    hashPassword: function(password){
-      return bcryptGenSalt().then(function(salt){
-        return bcryptHash(password,salt);
-      })
-    },
+    // hashPassword: function(password){
+    //   return bcryptGenSalt().then(function(salt){
+    //     return bcryptHash(password,salt);
+    //   })
+    // },
 
     toJSON: function(){
       var attrs = Bookshelf.Model.prototype.toJSON.call(this);
